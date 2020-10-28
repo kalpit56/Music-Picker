@@ -15,6 +15,8 @@ public class interaction : MonoBehaviour
 
     public Texture[] images = new Texture[8];
 
+    List<KeyValuePair<AudioClip, Texture>> songToImage = new List<KeyValuePair<AudioClip, Texture>>();
+
     public Button dislike;
     public Button like;
     public Button startOver;
@@ -29,40 +31,33 @@ public class interaction : MonoBehaviour
     public Canvas startCanvas; 
     public Canvas endCanvas;
 
-    int i = 0;
+    int randomPicker;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        background.GetComponent<RawImage>().texture = images[i];
         startCanvas.enabled = true;
         endCanvas.enabled = false;
 
+        for(int j = 0; j < music.Length; j++){
+            KeyValuePair<AudioClip, Texture> pair = new KeyValuePair<AudioClip, Texture>(music[j], images[j]);
+            songToImage.Add(pair);
+        }
+
+        randomPicker = Random.Range(0, songToImage.Count);
+        playNext();
+
         like.onClick.AddListener(() => {
-            string musicString = music[i].ToString();
-            musicString = musicString.Substring(0, musicString.IndexOf("UnityEngine.Audio")-1);
-            likes.Add(musicString);
+            likes.Add(musicToString());
             likeCount.text = "Likes: " + likes.Count.ToString();
-            checkEnd();
-            if(startCanvas.enabled){
-                i++;
-                background.GetComponent<RawImage>().texture = images[i];
-                playNext();
-            }
+            adjust();
         });
 
         dislike.onClick.AddListener(() => {
-            string musicString = music[i].ToString();
-            musicString = musicString.Substring(0, musicString.IndexOf("UnityEngine.Audio")-1);
-            dislikes.Add(musicString);
+            dislikes.Add(musicToString());
             dislikeCount.text = "Dislikes: " + dislikes.Count.ToString();
-            checkEnd();
-            if(startCanvas.enabled){
-                i++;
-                background.GetComponent<RawImage>().texture = images[i];
-                playNext();
-            }
+            adjust();
         });
 
         startOver.onClick.AddListener(() => {
@@ -76,14 +71,30 @@ public class interaction : MonoBehaviour
         
     }
 
+    void adjust() {
+        songToImage.RemoveAt(randomPicker);
+        randomPicker = Random.Range(0, songToImage.Count);
+        checkEnd();
+        if(startCanvas.enabled){
+            playNext();
+        }
+    }
+    
+    string musicToString() {
+        string musicString = songToImage[randomPicker].Key.ToString();
+        musicString = musicString.Substring(0, musicString.IndexOf("UnityEngine.Audio")-1);
+        return musicString;
+    }
+
 
     void playNext() {
-        currentSong.clip = music[i];
+        currentSong.clip = songToImage[randomPicker].Key;
         currentSong.Play();
+        background.GetComponent<RawImage>().texture = songToImage[randomPicker].Value;
     }
 
     void checkEnd(){
-        if(i == 7) {
+        if(songToImage.Count == 0) {
             startCanvas.enabled = false;
             currentSong.Stop();
             endCanvas.enabled = true;
