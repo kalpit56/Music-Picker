@@ -20,6 +20,7 @@ public class interaction : MonoBehaviour
     public Button dislike;
     public Button like;
     public Button startOver;
+    public Button start;
 
     public Text likeCount;
     public Text dislikeCount;
@@ -28,7 +29,8 @@ public class interaction : MonoBehaviour
 
     public GameObject background;
 
-    public Canvas startCanvas; 
+    public Canvas startCanvas;
+    public Canvas mainCanvas; 
     public Canvas endCanvas;
 
     int randomPicker;
@@ -38,6 +40,7 @@ public class interaction : MonoBehaviour
     void Start()
     {
         startCanvas.enabled = true;
+        mainCanvas.enabled = false;
         endCanvas.enabled = false;
 
         for(int j = 0; j < music.Length; j++){
@@ -45,8 +48,12 @@ public class interaction : MonoBehaviour
             songToImage.Add(pair);
         }
 
-        randomPicker = Random.Range(0, songToImage.Count);
-        playNext();
+        start.onClick.AddListener(() => {
+            randomPicker = Random.Range(0, songToImage.Count);
+            startCanvas.enabled = false;
+            mainCanvas.enabled = true; 
+            playNext();
+        });
 
         like.onClick.AddListener(() => {
             likes.Add(musicToString());
@@ -75,7 +82,7 @@ public class interaction : MonoBehaviour
         songToImage.RemoveAt(randomPicker);
         randomPicker = Random.Range(0, songToImage.Count);
         checkEnd();
-        if(startCanvas.enabled){
+        if(mainCanvas.enabled){
             playNext();
         }
     }
@@ -95,7 +102,7 @@ public class interaction : MonoBehaviour
 
     void checkEnd(){
         if(songToImage.Count == 0) {
-            startCanvas.enabled = false;
+            mainCanvas.enabled = false;
             currentSong.Stop();
             endCanvas.enabled = true;
             displayEnd();     

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 577, y: 471}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 578, y: 471}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 33
+  controlID: 25
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 652
     height: 987
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 471}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 34
+  controlID: 76
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 200}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 35
+  controlID: 77
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,9 +317,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 499.43005, y: 163.86363, z: 1186.0059}
+    m_Target: {x: 402.22092, y: 248.54099, z: 1196.9727}
     speed: 2
-    m_Value: {x: 499.43005, y: 163.86363, z: 1186.0059}
+    m_Value: {x: 402.22092, y: 248.54099, z: 1196.9727}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -366,13 +366,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.04076444, y: 0.040450554, z: -0.0016516512, w: 0.99834526}
+    m_Target: {x: 0.021304196, y: 0.017990325, z: -0.00038339634, w: 0.9996073}
     speed: 2
-    m_Value: {x: 0.040764563, y: 0.040450677, z: -0.0016516562, w: 0.9983483}
+    m_Value: {x: 0.021304276, y: 0.017990392, z: -0.00038339777, w: 0.9996111}
   m_Size:
-    m_Target: 1087.7789
+    m_Target: 1017.98346
     speed: 2
-    m_Value: 1087.7789
+    m_Value: 1017.98346
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -460,12 +460,12 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Unity3D.EmojiText
+    - Assets
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Unity3D.EmojiText
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\kalpi\OneDrive\Documents\Unity Projects\CIM 203\CIM203
     Midterm
@@ -473,9 +473,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 60380000
-    m_LastClickedID: 14432
-    m_ExpandedIDs: 0000000050380000523800006038000000ca9a3b
+    m_SelectedIDs: 36380000
+    m_LastClickedID: 14390
+    m_ExpandedIDs: 0000000036380000383800003a38000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005038000052380000
+    m_ExpandedIDs: 0000000036380000383800003a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -531,7 +531,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300004039000024380000000000002e3e0000283e0000
+    m_ExpandedInstanceIDs: c623000040390000243800002e3e0000283e000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -627,21 +627,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 62fbffffb0370000
+      m_ExpandedIDs: 62fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: startCanvas
+        m_OriginalName: startCanvas
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -1774
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
